@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rapido_clone/utills/app_color.dart';
+import 'package:rapido_clone/views/home_screen.dart';
 import 'package:rapido_clone/views/widgets/custom_button.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -31,7 +32,25 @@ class _SplashScreenState extends State<SplashScreen> {
               SizedBox(
                 height: 80,
               ),
-              CustomButton(onPressed: (){}, buttonText: "Continue with Phone Number"),
+              // CustomButton(onPressed: (){
+              //  //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+              // }, buttonText: "Continue with Phone Number"),
+
+          Container(
+            margin: EdgeInsets.all(20),
+            width:Get.width ,
+            height: Get.height*0.07,
+            child: TextButton(
+              onPressed:  (){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+          },
+              child: Text("Continue with Phone Number",style: TextStyle(color: AppColor.black,fontSize: 14,fontWeight: FontWeight.normal),),
+            ),
+            decoration: BoxDecoration(
+                color: AppColor.primaryColor,
+                borderRadius: BorderRadius.circular(10)
+            ),
+          ),
 
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
