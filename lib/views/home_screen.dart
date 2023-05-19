@@ -13,7 +13,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final Completer<GoogleMapController> _controller = Completer();
-
+  int _page = 0;
+  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   static const LatLng sourceLocation = LatLng(37.33500926, -122.03272188);
   static const LatLng destination = LatLng(37.33429383, -122.06600055);
   BitmapDescriptor currentLocationIcon = BitmapDescriptor.defaultMarker;
@@ -58,6 +59,10 @@ class _HomeScreenState extends State<HomeScreen> {
     setCustomMarkerIcon();
     //getPolyPoints();
     super.initState();
+
+    final CurvedNavigationBarState? navBarState =
+        _bottomNavigationKey.currentState;
+    navBarState?.setPage(1);
   }
   @override
   Widget build(BuildContext context) {
