@@ -38,6 +38,9 @@ dependencies:
   get: ^4.6.5
   permission_handler: ^10.2.0
   google_fonts: ^4.0.4
+  flutter_polyline_points:
+  google_maps_flutter:
+  location:
 
 
 dev_dependencies:
