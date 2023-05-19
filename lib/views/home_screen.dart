@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
+import 'package:rapido_clone/utills/app_color.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -119,27 +120,30 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueAccent,
+        key: _bottomNavigationKey,
+        index: 1,
+        backgroundColor: Colors.transparent,
+        color: AppColor.primaryColor,
         items: <Widget>[
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.alarm_add_outlined),
-              Text("Ride Later",style: TextStyle(color: Colors.black,fontSize: 12),)
+              Icon(Icons.alarm_add_outlined,size: 20,),
+              Text("Ride Later",style: TextStyle(color: Colors.black,fontSize: 8),)
             ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset("assets/image/scooter.png"),
-              Text("Ride Now",style: TextStyle(color: Colors.black,fontSize: 12),)
+              Image.asset("assets/image/scooter.png",height: 20,),
+              Text("Ride Now",style: TextStyle(color: Colors.black,fontSize: 8),)
             ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset("assets/image/package.png"),
-              Text("Package-Delivery",style: TextStyle(color: Colors.black,fontSize: 12),)
+              Image.asset("assets/image/package.png",height: 20,),
+              Text("Package",style: TextStyle(color: Colors.black,fontSize: 8),)
             ],
           ),
         ],
